@@ -1,0 +1,146 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  
+  th, td {
+    padding: 16px;
+    text-align: left;
+  }
+  
+  th {
+    color: #9CA3AF;
+    font-weight: 500;
+    border-bottom: 1px solid #374151;
+    cursor: pointer;
+    transition: color 0.2s;
+    white-space: nowrap;
+    
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  
+  tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(55, 65, 81, 0.5);
+  }
+  
+  td {
+    color: #E5E7EB;
+    vertical-align: middle;
+  }
+}
+
+.sortIcon {
+  display: inline-block;
+  margin-left: 4px;
+  color: #6B7280;
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.productImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #374151;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.statusInStock {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.statusLowStock {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #F59E0B;
+}
+
+.statusOutOfStock {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: rgba(55, 65, 81, 0.5);
+  border: none;
+  border-radius: 6px;
+  color: #9CA3AF;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  &:hover {
+    background-color: #374151;
+    color: #ffffff;
+  }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  p {
+    color: #9CA3AF;
+    max-width: 24rem;
+  }
+}
+
+.emptyIcon {
+  color: #6B7280;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: rgba(55, 65, 81, 0.3);
+} 

@@ -1,0 +1,77 @@
+.confirmationContainer {
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  width: 4rem;
+  height: 4rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.message {
+  color: #9CA3AF;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cancelButton, .deleteButton {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton {
+  border: 1px solid #374151;
+  background-color: transparent;
+  color: #9CA3AF;
+  
+  &:hover {
+    background-color: #374151;
+    color: #E5E7EB;
+  }
+}
+
+.deleteButton {
+  background-color: #EF4444;
+  border: 1px solid #EF4444;
+  color: white;
+  
+  &:hover {
+    background-color: #DC2626;
+    border-color: #DC2626;
+  }
+} 

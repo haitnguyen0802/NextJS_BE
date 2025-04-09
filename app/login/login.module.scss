@@ -1,0 +1,174 @@
+//Custome Background Color & Something about Border
+body,
+html {
+    background-color: #B8CEE4;
+}
+
+.loginContainer {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 16px);
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leftSection {
+    max-width: 55%;
+    width: 100%;
+    background-color: #0066cc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+    position: relative;
+    //Custome CSS
+    align-items: flex-start;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 20%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230066cc' fill-opacity='0.2' d='M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+        z-index: 1;
+    }
+}
+
+.brand {
+    text-align: left;
+    margin-bottom: 1rem;
+    z-index: 2;
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        max-width: 400px;
+    }
+}
+
+.readMoreButton {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    // margin-top: 1.5rem;
+    z-index: 2;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+}
+
+.rightSection {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.loginForm {
+    width: 100%;
+    max-width: 350px;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: #666;
+        margin-bottom: 2rem;
+    }
+}
+
+.inputGroup {
+    margin-bottom: 1.25rem;
+
+    input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus {
+            border-color: #0066cc;
+        }
+
+        &::placeholder {
+            color: #9ca3af;
+        }
+    }
+}
+
+.loginButton {
+    width: 100%;
+    background-color: #0066cc;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 0.5rem;
+
+    &:hover {
+        background-color: #0052a3;
+    }
+}
+
+.forgotPassword {
+    display: block;
+    text-align: center;
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 768px) {
+    .loginContainer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .leftSection {
+        padding: 3rem 1.5rem;
+    }
+
+    .rightSection {
+        padding: 2rem 1.5rem;
+    }
+}

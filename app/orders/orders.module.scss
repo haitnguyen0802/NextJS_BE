@@ -1,0 +1,119 @@
+.ordersPage {
+  padding: 24px;
+  min-height: calc(100vh - 64px); // Trừ đi chiều cao của header
+}
+
+.header {
+  margin-bottom: 32px;
+
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .exportButton {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background-color: #1E2A3B;
+      color: white;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: #374151;
+      }
+    }
+  }
+}
+
+.filters {
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  .searchBar {
+    position: relative;
+    max-width: 400px;
+    flex-grow: 1;
+
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      padding-left: 40px;
+      background-color: #1E2A3B;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 14px;
+
+      &::placeholder {
+        color: #6B7280;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #3B82F6;
+      }
+    }
+
+    .searchIcon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: #6B7280;
+    }
+  }
+
+  .statusFilters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .statusButton {
+      padding: 8px 16px;
+      background-color: #1E2A3B;
+      border: 1px solid #374151;
+      border-radius: 6px;
+      color: #9CA3AF;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: #374151;
+        color: #ffffff;
+      }
+
+      &.active {
+        background-color: #3B82F6;
+        border-color: #3B82F6;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.tableContainer {
+  background-color: #1E2A3B;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #374151;
+} 

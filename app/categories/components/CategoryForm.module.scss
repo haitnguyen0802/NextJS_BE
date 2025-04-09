@@ -1,0 +1,121 @@
+.form {
+  width: 100%;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #E5E7EB;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background-color: #111927;
+    border: 1px solid #374151;
+    border-radius: 0.375rem;
+    color: #E5E7EB;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+    
+    &:focus {
+      outline: none;
+      border-color: #3B82F6;
+    }
+    
+    &::placeholder {
+      color: #6B7280;
+    }
+  }
+  
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  
+  input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  
+  span {
+    font-size: 0.875rem;
+    color: #E5E7EB;
+  }
+}
+
+.inputError {
+  border-color: #EF4444 !important;
+}
+
+.errorText {
+  margin-top: 0.25rem;
+  color: #EF4444;
+  font-size: 0.75rem;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #374151;
+  padding-top: 1.25rem;
+}
+
+.cancelButton, .submitButton {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton {
+  border: 1px solid #374151;
+  background-color: transparent;
+  color: #9CA3AF;
+  
+  &:hover {
+    background-color: #374151;
+    color: #E5E7EB;
+  }
+}
+
+.submitButton {
+  background-color: #3B82F6;
+  border: 1px solid #3B82F6;
+  color: white;
+  
+  &:hover {
+    background-color: #2563EB;
+    border-color: #2563EB;
+  }
+} 

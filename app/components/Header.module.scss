@@ -1,0 +1,147 @@
+/* Header.module.scss */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background-color: #1B2431; /* Match layout background */
+  border-bottom: 1px solid #4B5563; /* Slightly darker gray border */
+  height: 64px; /* Header height */
+  padding: 0 24px; /* Horizontal padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__mobileToggle {
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #374151; /* Darker gray on hover */
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #9CA3AF; /* Gray icon */
+  }
+}
+
+.search {
+  position: relative;
+}
+
+.search__input {
+  width: 280px;
+  height: 40px;
+  background-color: rgba(55, 65, 81, 0.5); /* bg-gray-800/50 */
+  border: 1px solid #4B5563; /* border-gray-700 */
+  border-radius: 8px;
+  padding-left: 40px; /* Space for icon */
+  padding-right: 16px;
+  font-size: 14px;
+  color: #D1D5DB; /* text-gray-300 */
+  
+  &::placeholder {
+    color: #6B7280; /* placeholder-gray-500 */
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #3B82F6; /* focus:border-blue-500 */
+  }
+}
+
+.search__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #6B7280; /* text-gray-500 */
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.notificationButton {
+  position: relative;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #374151; /* Darker gray on hover */
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #9CA3AF; /* Gray icon */
+  }
+}
+
+.notificationButton__badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #EF4444; /* bg-red-500 */
+  border-radius: 50%;
+}
+
+.profileButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #374151; /* Darker gray on hover */
+  }
+}
+
+.profileButton__avatar {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.profileButton__info {
+  text-align: left;
+  
+  @media (max-width: 639px) { /* sm breakpoint */
+    display: none;
+  }
+}
+
+.profileButton__name {
+  font-size: 14px;
+  font-weight: 500; /* medium */
+  color: #E5E7EB; /* text-gray-200 */
+}
+
+.profileButton__role {
+  font-size: 12px;
+  color: #6B7280; /* text-gray-500 */
+} 

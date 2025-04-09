@@ -1,0 +1,225 @@
+.productsPage {
+  padding: 24px;
+  min-height: calc(100vh - 64px); // Trừ đi chiều cao của header
+}
+
+.header {
+  margin-bottom: 32px;
+
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .addButton {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background-color: #3B82F6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #2563EB;
+      }
+
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.filters {
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  .searchBar {
+    position: relative;
+    max-width: 400px;
+    flex-grow: 1;
+
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      padding-left: 40px;
+      background-color: #1E2A3B;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 14px;
+
+      &::placeholder {
+        color: #6B7280;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #3B82F6;
+      }
+    }
+
+    .searchIcon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: #6B7280;
+    }
+  }
+
+  .categoryFilters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .categoryButton {
+      padding: 8px 16px;
+      background-color: #1E2A3B;
+      border: 1px solid #374151;
+      border-radius: 6px;
+      color: #9CA3AF;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: #374151;
+        color: #ffffff;
+      }
+
+      &.active {
+        background-color: #3B82F6;
+        border-color: #3B82F6;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.tableContainer {
+  background-color: #1E2A3B;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #374151;
+}
+
+// Add styles for loading and error states
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(75, 85, 99, 0.2);
+  border-top-color: #4B5563;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorMessage {
+  width: 100%;
+  padding: 16px;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  color: #EF4444;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+// Pagination styles
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 8px;
+}
+
+.pageButton {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E2A3B;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  color: #9CA3AF;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  &:hover:not(.disabled):not(.active) {
+    background-color: #374151;
+    color: #ffffff;
+  }
+  
+  &.active {
+    background-color: #3B82F6;
+    border-color: #3B82F6;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  
+  &.navButton {
+    padding: 0 16px;
+  }
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      background-color: #1E2A3B;
+      color: #9CA3AF;
+    }
+  }
+}
+
+.ellipsis {
+  margin: 0 4px;
+  color: #9CA3AF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+} 

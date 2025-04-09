@@ -1,0 +1,144 @@
+.categoriesPage {
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #374151;
+}
+
+.headerContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    margin: 0;
+  }
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  
+  span {
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+  
+  &:hover {
+    background-color: #2563EB;
+  }
+}
+
+.errorMessage {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #EF4444;
+  font-size: 0.875rem;
+}
+
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  
+  p {
+    margin-top: 1rem;
+    color: #9CA3AF;
+    font-size: 0.875rem;
+  }
+}
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid rgba(75, 85, 99, 0.2);
+  border-top-color: #4B5563;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tableContainer {
+  background-color: #1E2A3B;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+/* Filter styles */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.searchBar {
+  position: relative;
+  flex: 1;
+  
+  input {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    padding-left: 2.5rem;
+    background-color: #1E2A3B;
+    border: 1px solid #374151;
+    border-radius: 0.375rem;
+    color: #E5E7EB;
+    font-size: 0.875rem;
+    
+    &:focus {
+      outline: none;
+      border-color: #3B82F6;
+    }
+    
+    &::placeholder {
+      color: #6B7280;
+    }
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #6B7280;
+} 
