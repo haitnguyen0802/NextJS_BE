@@ -113,6 +113,7 @@ const CategoryForm: React.FC<CategoryFormProps> = ({
             onChange={handleChange}
             disabled={isSubmitting}
           />
+          <br/>
           <small>Leave empty to auto-generate from name</small>
         </div>
         

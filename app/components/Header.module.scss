@@ -102,6 +102,13 @@
   border-radius: 50%;
 }
 
+/* Profile section that holds both profile button and logout */
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .profileButton {
   display: flex;
   align-items: center;
@@ -127,6 +134,19 @@
   }
 }
 
+/* Avatar placeholder for when user doesn't have an image */
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: #3B82F6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .profileButton__info {
   text-align: left;
   
@@ -144,4 +164,20 @@
 .profileButton__role {
   font-size: 12px;
   color: #6B7280; /* text-gray-500 */
+}
+
+/* Logout button */
+.logoutButton {
+  background-color: #374151;
+  color: #E5E7EB;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #4B5563;
+  }
 } 

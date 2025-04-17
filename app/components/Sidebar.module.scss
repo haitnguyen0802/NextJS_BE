@@ -66,6 +66,54 @@
   color: #ffffff;
 }
 
+/* User info section styles */
+.userInfo {
+  padding: 16px 24px;
+  border-bottom: 1px solid #4B5563;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.userAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: #3B82F6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+.userRole {
+  font-size: 14px;
+  color: #9CA3AF;
+  text-align: center;
+}
+
 .nav {
   padding: 16px;
   flex-grow: 1;

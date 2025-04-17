@@ -1,6 +1,8 @@
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import styles from './Header.module.scss'; // Import SCSS module
+import { useAuth } from "../context/AuthContext";
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -8,6 +10,14 @@ interface HeaderProps {
 }
 
 const Header = ({ toggleSidebar, isMobile }: HeaderProps) => {
+  const { user, logout } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.header__left}>
@@ -60,20 +70,39 @@ const Header = ({ toggleSidebar, isMobile }: HeaderProps) => {
           <span className={styles.notificationButton__badge} />
         </button>
 
-        {/* Profile */}
-        <button className={styles.profileButton}>
-          <div className={styles.profileButton__avatar}>
-            <Image
-              src="/avatar.jpg" // Make sure this path is correct in your public folder
-              alt="Profile"
-              fill
-            />
+        {/* Profile - update to use user from auth context */}
+        {user && (
+          <div className={styles.profileSection}>
+            <button className={styles.profileButton}>
+              <div className={styles.profileButton__avatar}>
+                {user.avatar ? (
+                  <Image
+                    src={user.avatar}
+                    alt={user.name}
+                    fill
+                  />
+                ) : (
+                  <div className={styles.avatarPlaceholder}>
+                    {user.name.charAt(0)}
+                  </div>
+                )}
+              </div>
+              <div className={styles.profileButton__info}>
+                <p className={styles.profileButton__name}>{user.name}</p>
+                <p className={styles.profileButton__role}>
+                  {user.role === 1 ? 'Administrator' : 'User'}
+                </p>
+              </div>
+            </button>
+            
+            <button 
+              className={styles.logoutButton}
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
           </div>
-          <div className={styles.profileButton__info}>
-            <p className={styles.profileButton__name}>Moni Roy</p>
-            <p className={styles.profileButton__role}>Admin</p>
-          </div>
-        </button>
+        )}
       </div>
     </header>
   );

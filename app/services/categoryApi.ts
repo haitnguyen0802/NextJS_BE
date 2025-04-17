@@ -138,4 +138,4 @@ export const deleteCategory = async (id: number): Promise<boolean> => {
     console.error(`Error deleting category with id ${id}:`, error);
     return false;
   }
-}; 
+};

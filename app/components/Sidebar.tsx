@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutGrid,
   Package,
@@ -14,6 +14,7 @@ import {
   LogOut
 } from "lucide-react";
 import styles from './Sidebar.module.scss'; // Import SCSS module
+import { useAuth } from "../context/AuthContext";
 
 interface SidebarProps {
   isMobile: boolean;
@@ -36,6 +37,18 @@ const menuItems = [
 
 const Sidebar = ({ isMobile, isOpen }: SidebarProps) => {
   const pathname = usePathname();
+  const router = useRouter();
+  const { logout, user } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
+  };
+
+  // Check if current path is within a section (e.g. /users, /users/1, /users/create)
+  const isPathActive = (path: string) => {
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
 
   const sidebarClasses = `
     ${styles.sidebar}
@@ -57,12 +70,33 @@ const Sidebar = ({ isMobile, isOpen }: SidebarProps) => {
         </Link>
       </div>
 
+      {/* User Info - Add this new section */}
+      {user && (
+        <div className={styles.userInfo}>
+          <div className={styles.userAvatar}>
+            {user.avatar ? (
+              <img src={user.avatar} alt={user.name} />
+            ) : (
+              <div className={styles.avatarPlaceholder}>
+                {user.name.charAt(0)}
+              </div>
+            )}
+          </div>
+          <div className={styles.userName}>
+            {user.name}
+          </div>
+          <div className={styles.userRole}>
+            {user.role === 1 ? 'Administrator' : 'User'}
+          </div>
+        </div>
+      )}
+
       {/* Menu Items */}
       <nav className={styles.nav}>
         <ul className={styles.menu}>
           {menuItems.map((item) => {
             const Icon = item.icon;
-            const isActive = pathname === item.href;
+            const isActive = isPathActive(item.href);
             const linkClasses = `
               ${styles.menu__itemLink} 
               ${isActive ? styles['menu__itemLink--active'] : ''}
@@ -82,7 +116,7 @@ const Sidebar = ({ isMobile, isOpen }: SidebarProps) => {
 
       {/* Logout Button */}
       <div className={styles.logout}>
-        <button className={styles.logout__button}>
+        <button className={styles.logout__button} onClick={handleLogout}>
           <LogOut />
           <span className={styles.logout__label}>Logout</span>
         </button>
